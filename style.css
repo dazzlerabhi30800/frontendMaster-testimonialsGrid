@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300&display=swap');
+* {
+    margin : 0;
+    padding : 0;
+    box-sizing : border-box;
+    font-family : 'Barlow Semi Condensed', sans-serif;
+}
+
+:root {
+    --Moderate-violet: hsl(263, 55%, 52%);
+    --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+    --Light-gray: hsl(0, 0%, 81%);
+    --Light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+body {
+    height : 100vh;
+    display : flex;
+}
+
+.container {
+    display : grid;
+    /* grid-template-columns : repeat(4, 1fr); */
+    grid-auto-columns : 1fr;
+    grid-template-areas : 
+    'one'
+    'two'
+    'three'
+    'four'
+    'five'
+    'six';
+    padding-block: 2rem;
+    width: min(95%, 70rem);
+    margin-inline: auto;
+    gap : 10px;
+    margin-top : 1rem;
+}
+
+.card:nth-child(1) {
+    grid-area : one;
+}
+.card:nth-child(2) {
+    grid-area : two;
+}
+.card:nth-child(3) {
+    grid-area : three;
+}
+.card:nth-child(4) {
+    grid-area : four;
+}
+.card:nth-child(5) {
+    grid-area : five;
+}
+
+#card1 {
+    background  : var(--Moderate-violet);
+    display : flex;
+    flex-direction : column;
+    border-radius : 10px;
+}
+
+#card2 {
+    background : var(--Very-dark-grayish-blue);
+    border-radius : 10px;
+}
+
+#card3 {
+    background : var(--Light-grayish-blue);
+    border-radius : 10px;
+    color : black;
+}
+#card3 .heading,
+#card3 .sub-heading {
+    color : black;
+}
+#card3 .offer {
+    color : black;
+    font-size : 1.2rem;
+}
+#card3 .experience {
+    color : gray;
+}
+
+
+#card4 {
+    background : var(--Very-dark-blackish-blue);
+    border-radius : 10px;
+    /* grid-column : span 2; */
+}
+#card5 {
+    background : var(--Light-grayish-blue);
+    border-radius : 10px;
+    /* grid-column-start : 4; */
+    /* grid-row : 1 / span 2; */
+}
+#card5 .heading,
+#card5 .sub-heading {
+    color : black;
+}
+#card5 .offer {
+    color : black;
+    font-size : 1.2rem;
+}
+#card5 .experience {
+    color : gray;
+}
+
+.quotation{
+    height : 110px;
+    width : 110px;
+    float : right;
+    position : relative;
+    align-self : flex-end;
+    margin-right : 15px;
+    z-index : 2;
+    opacity : .4;
+    padding-top : 1rem;
+}
+
+.header-wrapper {
+    /* position : absolute; */
+    z-index : 4;
+    display : flex;
+    margin-left : 14px;
+    padding-top : 2rem;
+}
+.first {
+    position : absolute;
+}
+
+.header-img {
+    border-radius : 50%;
+    background : white;
+}
+
+
+.text-wrapper {
+    display : flex;
+    flex-direction : column;
+    margin-left : 1rem;
+    margin-top : .6rem;
+    color : white;
+}
+
+.heading {
+    font-size : 1rem;
+    color : #ccc;
+}
+
+.sub-heading {
+    display : block;
+    font-size : .8rem;
+}
+
+.offer {
+    font-size : .9rem;
+    color : white;
+    padding-right : 1.2rem;
+    padding-left : 1rem;
+    z-index : 4;
+    margin-top : .5rem;
+   
+}
+
+
+.experience {
+    font-size : .8rem;
+    color : rgb(202, 199, 199);
+    padding-top : 1rem;
+    padding-bottom : 1rem;
+    padding-right : 1.2rem;
+    padding-left : 1rem;
+    z-index : 5;
+}
+
+@media  (min-width : 30em) {
+    .container {
+        grid-template-areas : 
+        'one one'
+        'two five'
+        'three five'
+        'four four';
+    }
+}
+
+@media (min-width : 1000px) {
+    body {
+        display : flex;
+        align-items : center;
+        justify-content : center;
+    }
+    .container {
+        grid-template-areas : 
+          'one one two five'
+          'three four four five';
+    }
+}
+
